@@ -55,7 +55,15 @@ export const FixInputPanel: React.FC = () => {
   };
 
   return (
-    <Paper sx={{ p: 2, height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Paper sx={{ 
+      p: 2, 
+      height: '100%', 
+      display: 'flex', 
+      flexDirection: 'column',
+      '& .MuiTextField-root': {
+        flexGrow: 1  // Make the textarea fill available space
+      }
+    }}>
       <Stack spacing={2}>
         <Stack direction="row" spacing={2}>
           <FormControl size="small" sx={{ minWidth: 120 }}>

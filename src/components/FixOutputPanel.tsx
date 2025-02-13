@@ -18,7 +18,13 @@ export const FixOutputPanel: React.FC = () => {
   const { parsedMessage, validationErrors } = useFixStore();
 
   return (
-    <Paper sx={{ p: 2, height: '100%', overflow: 'auto' }}>
+    <Paper sx={{ 
+      p: 2, 
+      height: '100%', 
+      display: 'flex', 
+      flexDirection: 'column',
+      overflow: 'hidden'
+    }}>
       {validationErrors.length > 0 && (
         <Box sx={{ mb: 3, p: 2, bgcolor: 'error.light', borderRadius: 1 }}>
           <Typography variant="h6" color="error.dark">Validation Errors:</Typography>
@@ -33,7 +39,7 @@ export const FixOutputPanel: React.FC = () => {
       {parsedMessage && (
         <>
           <Typography variant="h6" gutterBottom>Parsed Message:</Typography>
-          <TableContainer>
+          <TableContainer sx={{ flexGrow: 1, overflow: 'auto' }}>
             <Table size="small">
               <TableHead>
                 <TableRow>

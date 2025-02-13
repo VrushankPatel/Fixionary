@@ -15,11 +15,9 @@ export const TopNavBar: React.FC<TopNavBarProps> = ({ toggleTheme }) => {
         <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
           Fixionary
         </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <IconButton onClick={toggleTheme} color="inherit">
-            {theme.palette.mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </IconButton>
-        </Box>
+        <IconButton onClick={toggleTheme} color="inherit">
+          {theme.palette.mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </IconButton>
       </Toolbar>
     </AppBar>
   );
